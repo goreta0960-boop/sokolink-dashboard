@@ -234,9 +234,12 @@ export default function AdminDashboard() {
     <div style={s.page}>
       <header style={s.header}>
         <h1 style={s.logo}>🌾 SokoLink Admin</h1>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           {actionMsg && <span style={s.flash}>{actionMsg}</span>}
+          <a href="/monetization" style={s.navLink}>💰 Revenue</a>
+          <a href="/dashboard" style={s.navLink}>📦 Supplier</a>
           <button style={s.refresh} onClick={load}>↻ Refresh</button>
+          <button style={s.logout} onClick={() => { localStorage.clear(); window.location.href = "/"; }}>Logout</button>
         </div>
       </header>
 
@@ -474,7 +477,9 @@ const s: Record<string, React.CSSProperties> = {
   center:       { display: "flex", alignItems: "center", justifyContent: "center", height: "100vh", fontSize: 18 },
   header:       { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 },
   logo:         { fontSize: 24, fontWeight: 700, margin: 0 },
-  refresh:      { padding: "8px 16px", background: "#16a34a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontWeight: 600 },
+  refresh:      { padding: "7px 14px", background: "#16a34a", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontWeight: 600, fontSize: 13 },
+  navLink:      { padding: "7px 14px", background: "#f3f4f6", color: "#374151", borderRadius: 8, fontWeight: 600, fontSize: 13, textDecoration: "none" },
+  logout:       { padding: "7px 14px", background: "#fee2e2", color: "#dc2626", border: "none", borderRadius: 8, cursor: "pointer", fontWeight: 600, fontSize: 13 },
   flash:        { padding: "6px 14px", background: "#f0fdf4", color: "#16a34a", borderRadius: 8, fontWeight: 600, fontSize: 13 },
   tabs:         { display: "flex", gap: 4, marginBottom: 20, borderBottom: "2px solid #e5e7eb", paddingBottom: 0 },
   tab:          { padding: "10px 18px", border: "none", background: "none", cursor: "pointer", fontWeight: 500, color: "#666", borderRadius: "8px 8px 0 0", fontSize: 14 },

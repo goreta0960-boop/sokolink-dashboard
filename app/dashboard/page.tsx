@@ -58,6 +58,7 @@ export default function SupplierDashboard() {
         <div style={styles.user}>
           <span style={styles.phone}>{profile?.phone}</span>
           <a href="/chat" style={styles.chatBtn}>💬 Chat</a>
+          <a href="/admin" style={styles.adminBtn}>⚙️ Admin</a>
           <button style={styles.logout} onClick={() => { localStorage.clear(); window.location.href = "/"; }}>Logout</button>
         </div>
       </header>
@@ -150,6 +151,7 @@ const styles: Record<string, React.CSSProperties> = {
   user:         { display: "flex", alignItems: "center", gap: 16 },
   phone:        { fontSize: 14, color: "#555" },
   chatBtn:      { padding: "6px 14px", background: "#dcfce7", color: "#16a34a", borderRadius: 6, fontWeight: 600, fontSize: 13, textDecoration: "none" },
+  adminBtn:     { padding: "6px 14px", background: "#f3f4f6", color: "#374151", borderRadius: 6, fontWeight: 600, fontSize: 13, textDecoration: "none" },
   logout:       { padding: "6px 14px", background: "#fee2e2", color: "#dc2626", border: "none", borderRadius: 6, cursor: "pointer", fontWeight: 600, fontSize: 13 },
   statsRow:     { display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 16, marginBottom: 28 },
   statCard:     { background: "#fff", borderRadius: 10, padding: "20px 24px", boxShadow: "0 2px 8px rgba(0,0,0,0.06)" },

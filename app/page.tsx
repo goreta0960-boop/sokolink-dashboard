@@ -33,8 +33,10 @@ export default function LoginPage() {
 
     if (data.role === "supplier") {
       router.push("/dashboard");
+    } else if (data.role === "buyer") {
+      router.push("/buyer");
     } else {
-      setError("Dashboard is available for suppliers only.");
+      router.push("/admin");
     }
   }
 
@@ -42,7 +44,7 @@ export default function LoginPage() {
     <div style={styles.page}>
       <div style={styles.card}>
         <h1 style={styles.logo}>🌾 SokoLink</h1>
-        <p style={styles.sub}>Supplier & Admin Portal</p>
+        <p style={styles.sub}>Supplier, Buyer & Admin Portal</p>
 
         <form onSubmit={handleLogin} style={styles.form}>
           <label style={styles.label}>Phone number (with country code)</label>
